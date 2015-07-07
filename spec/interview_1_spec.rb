@@ -27,5 +27,11 @@ describe Interview1 do
       problem = Interview1.new
       expect(problem.parse({ :finlayson => 1, :bryan => 2, :andrew => :blah})).to eq [:finlayson, :andrew, :bryan]
     end
+
+    it 'should sort hashes with a mix of fixnums, strings, and symbols' do
+      problem = Interview1.new
+      expect(problem.parse({ :finlayson => 1, 1984 => :blah, "this is my string" => :blah})).to eq ["this is my string", :finlayson, 1984]
+    end
+
   end
 end
