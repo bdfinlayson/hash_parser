@@ -1,1 +1,1 @@
-require_relative '../app/interview_1'
+require_relative '../app/hash_parser'

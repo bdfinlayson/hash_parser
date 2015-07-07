@@ -1,4 +1,4 @@
-class Interview1
+class HashParser
 
   def parse(hash)
     array = Array.new
