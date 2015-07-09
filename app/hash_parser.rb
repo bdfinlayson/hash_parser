@@ -1,8 +1,12 @@
 class HashParser
 
-  def parse(hash)
+  def initialize(hash)
+    @hash = hash
+  end
+
+  def parse
     array = Array.new
-    hash.each do |key, value|
+    @hash.each_key do |key|
       if key.kind_of?(Fixnum)
         array << key.to_s
       else
@@ -19,7 +23,8 @@ class HashParser
     input.sort! do |x,y|
       y.size <=> x.size
     end
-    return_fixnums(input)
+    sorted_keys = return_fixnums(input)
+    assemble_hash(sorted_keys)
   end
 
   def return_fixnums(input)
@@ -45,5 +50,13 @@ class HashParser
     else
       false
     end
+  end
+
+  def assemble_hash(array)
+    hash = Hash.new
+    array.each do |key|
+      hash[key] = @hash[key]
+    end
+    hash
   end
 end
