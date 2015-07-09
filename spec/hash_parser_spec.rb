@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe HashParser do
 
-  context '#parse should return an array with hash keys sorted min to max' do
+  context '#parse should return a hash with hash keys sorted min to max' do
 
     it 'should return a hash object' do
       hash = HashParser.new({'this' => :is, :a => 'test', 'of' => 'the', :hash => 'parser' })
