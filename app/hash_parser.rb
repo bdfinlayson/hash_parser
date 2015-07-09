@@ -7,7 +7,7 @@ class HashParser
   def parse
     array = Array.new
     @hash.each_key do |key|
-      if key.kind_of?(Fixnum)
+      if key.is_a?(Fixnum)
         array << key.to_s
       else
         array << key
@@ -30,9 +30,9 @@ class HashParser
   def return_fixnums(input)
     array = Array.new
     input.each do |str|
-      if str.kind_of?(Symbol)
+      if str.is_a?(Symbol)
         array << str
-      elsif is_integer?(str)
+      elsif is_fixnum?(str)
         array << str.to_i
       else
         array << str
@@ -41,7 +41,7 @@ class HashParser
     array
   end
 
-  def is_integer?(str)
+  def is_fixnum?(str)
     result = str.split('').select do |char|
       /\d/.match(char)
     end
