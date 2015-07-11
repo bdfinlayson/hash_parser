@@ -1,2 +1,2 @@
-# interview_questions
-My collection of technical interview questions and solutions
+# Hash Parser
+A Ruby code challenge for writing a parser for sorting keys in a hash with their values from largest to smallest
